@@ -1,0 +1,1 @@
+openssl s_client -connect portal.YOUR_WORKSPACE_ID.quix.io:443 -showcerts

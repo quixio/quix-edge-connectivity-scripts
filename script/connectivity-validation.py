@@ -119,7 +119,8 @@ def check_quix_streaming_data(workspace_id, portal_api, testing_topic, sdk_token
         app.run(sdf)
 
     except Exception as e:
-        logging.error
+        logging.error(
+            f"❌ Failed to connect to Kafka using QuixStreams because {e}")
 
 
 def main():

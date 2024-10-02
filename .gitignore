@@ -21,6 +21,7 @@ dist/
 *.egg
 .eggs/
 pip-wheel-metadata/
+*.pem
 
 # Installer logs
 pip-log.txt

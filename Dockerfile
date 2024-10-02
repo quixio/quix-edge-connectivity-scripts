@@ -11,7 +11,7 @@ COPY script/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the rest of the application code
-COPY script/connectivity-validation.py .
+COPY script/test_suite.py .
 
 # Set the default command to run the Python script
 CMD ["python", "test_suite.py"]

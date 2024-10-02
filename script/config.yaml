@@ -1,0 +1,12 @@
+platform:
+  customca_cert_path: "ca.pem"  # Path of the Custom CA certificate file (optional)
+  urls: 
+    - "https://portal.byoc.quix.ai/" #Use the proper domain
+    - "https://portal-api.byoc.quix.ai/swagger/index.html" #Use the proper domain
+
+kafka:
+  bootstrap_servers: "kafka.byoc.quix.ai:30095,kafka.byoc.quix.ai:30096,kafka.byoc.quix.ai:30096"  # Assuming 9093 is the SSL-enabled port
+  recheable: true #This means wherever you are executing this suite, kafka needs to be recheable
+
+
+quix:

@@ -1,5 +1,5 @@
 # Variables
-IMAGE_NAME=test-suite
+IMAGE_NAME=quixpublic.azurecr.io/test-suite
 CONTAINER_NAME=test-suite-container
 DOCKER_FILE=Dockerfile
 CONFIG_FILE=config.yaml
@@ -24,6 +24,10 @@ else
 		-v $(PWD)/$(CONFIG_FILE):/app/$(CONFIG_FILE) \
 		$(IMAGE_NAME)
 endif
+#Publish to the public registry
+publish:
+	@echo "Publishing container to ..."
+	docker push $(IMAGE_NAME)
 
 # Clean up Docker images and containers
 clean:

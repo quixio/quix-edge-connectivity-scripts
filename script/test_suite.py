@@ -140,6 +140,9 @@ def main():
         kafka_bootstrap_servers = config['kafka']['bootstrap_servers']
         for server in kafka_bootstrap_servers.split(","):
             check_kafka_connectivity(server)
+    else:
+        logging.warning(
+            "❗Kafka connectivity will not be tested. If you are interested on this, fill the kafka block and set as true")
 
     quix_config = config['platform']['quix']
     if quix_config['workspace_id'] != '' and quix_config['topic'] != '' and quix_config['sdk_token'] != '':
@@ -149,7 +152,7 @@ def main():
                                   testing_topic=quix_config['topic'], sdk_token=quix_config['sdk_token'], ca_cert_path=customca_cert_path)
     else:
         logging.warning(
-            "❗QuixStreams will be no tested from this side, If you are interested on this, fill the quix block")
+            "❗QuixStreams will not be no tested from this side, If you are interested on this, fill the quix block")
 
 
 if __name__ == "__main__":

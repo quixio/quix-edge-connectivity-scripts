@@ -30,15 +30,15 @@ This repository contains a script to verify your **Quix Edge installation is com
     ```bash
     platform:
         customca_cert_path: ""  # Optional: Path of the Custom CA certificate file (if required)
-        portal_url: "https://portal.byoc.quix.io/"  # Use the appropriate portal URL for your environment
-        api_url: "https://portal-api.byoc.quix.io/swagger/index.html"  # Use the appropriate API URL for your environment
+        portal_url: "https://portal.custname.quix.io/"  # Use the appropriate portal URL for your environment
+        api_url: "https://portal-api.custname.quix.io/swagger/index.html"  # Use the appropriate API URL for your environment
         quix:
             workspace_id: "local-test-testing"  # Your Quix workspace ID
             topic: "test-suite"  # Your Kafka topic name in Quix
             sdk_token: ""  # Your Quix SDK token
 
     kafka:
-        bootstrap_servers: "kafka.byoc.quix.io:30095,kafka.byoc.quix.io:30096,kafka.byoc.quix.io:30097"  # Kafka bootstrap servers for Quix
+        bootstrap_servers: "kafka.custname.quix.io:30095,kafka.custname.quix.io:30096,kafka.custname.quix.io:30097"  # Kafka bootstrap servers for Quix
         reachable: false  # Set to true if Kafka is reachable from where you are running the suite
     ```
 
@@ -59,7 +59,7 @@ This repository contains a script to verify your **Quix Edge installation is com
 
 ## Usage Options
 You can either build the Docker image locally or pull the pre-built image from the Docker registry.
-### Option 1: Pull the Pre-Built Docjer Image
+### Option 1: Pull the Pre-Built Docker Image
 You can pull the pre-built image from the Docker registry and run it directly without needing to build it locally.
 
 1. **Pull the Pre-Built Image**:
@@ -102,32 +102,32 @@ Alternatively, you can build the image locally.
 ## Examples of outputs
 ### Everything is ok
 ```bash
-✅ SSL certificate for portal.byoc.quix.io:443 is trusted.
-✅ Connectivity to https://portal.byoc.quix.io/ is successful.
-✅ SSL certificate for portal-api.byoc.quix.io:443 is trusted.
-✅ Connectivity to https://portal-api.byoc.quix.io/swagger/index.html is successful.
-✅ Successfully connected to Kafka at kafka.byoc.quix.io:30095
-✅ Successfully connected to Kafka at kafka.byoc.quix.io:30096
-✅ Successfully connected to Kafka at kafka.byoc.quix.io:30097
+✅ SSL certificate for portal.custname.quix.io:443 is trusted.
+✅ Connectivity to https://portal.custname.quix.io/ is successful.
+✅ SSL certificate for portal-api.custname.quix.io:443 is trusted.
+✅ Connectivity to https://portal-api.custname.quix.io/swagger/index.html is successful.
+✅ Successfully connected to Kafka at kafka.custname.quix.io:30095
+✅ Successfully connected to Kafka at kafka.custname.quix.io:30096
+✅ Successfully connected to Kafka at kafka.custname.quix.io:30097
 ✅ Successfully connected to Kafka using quixstream
 ```
 ### Something is wrong
 ```bash
-✅ SSL certificate for portal.byoc.quix.io:443 is trusted.
-✅ Connectivity to https://portal.byoc.quix.io/ is successful.
-✅ SSL certificate for portal-api.byoc.quix.io:443 is trusted.
-✅ Connectivity to https://portal-api.byoc.quix.io/swagger/index.html is successful.
-✅ Successfully connected to Kafka at kafka.byoc.quix.io:30095
-✅ Successfully connected to Kafka at kafka.byoc.quix.io:30096
-✅ Successfully connected to Kafka at kafka.byoc.quix.io:30097
-❌ Failed to connect to Kafka using QuixStreams because Error 401 for url "https://portal-api.byoc.quix.io/workspaces/local-test-testing/broker/librdkafka": {'message': 'User is not authenticated', 'correlationId': '2332CBB8'}
+✅ SSL certificate for portal.custname.quix.io:443 is trusted.
+✅ Connectivity to https://portal.custname.quix.io/ is successful.
+✅ SSL certificate for portal-api.custname.quix.io:443 is trusted.
+✅ Connectivity to https://portal-api.custname.quix.io/swagger/index.html is successful.
+✅ Successfully connected to Kafka at kafka.custname.quix.io:30095
+✅ Successfully connected to Kafka at kafka.custname.quix.io:30096
+✅ Successfully connected to Kafka at kafka.custname.quix.io:30097
+❌ Failed to connect to Kafka using QuixStreams because Error 401 for url "https://portal-api.custname.quix.io/workspaces/local-test-testing/broker/librdkafka": {'message': 'User is not authenticated', 'correlationId': '2332CBB8'}
 ```
 ### Missing Configuration
 ```bash
-✅ SSL certificate for portal.byoc.quix.io:443 is trusted.
-✅ Connectivity to https://portal.byoc.quix.io/ is successful.
-✅ SSL certificate for portal-api.byoc.quix.io:443 is trusted.
-✅ Connectivity to https://portal-api.byoc.quix.io/swagger/index.html is successful.
+✅ SSL certificate for portal.custname.quix.io:443 is trusted.
+✅ Connectivity to https://portal.custname.quix.io/ is successful.
+✅ SSL certificate for portal-api.custname.quix.io:443 is trusted.
+✅ Connectivity to https://portal-api.custname.quix.io/swagger/index.html is successful.
 ❗ Kafka connectivity will not be tested. If you are interested on this, fill the kafka block and set as true
 ❗QuixStreams will not be no tested from this side, If you are interested on this, fill the quix block
 ```

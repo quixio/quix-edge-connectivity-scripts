@@ -1,13 +1,13 @@
 platform:
   customca_cert_path: "ca.pem"  #(optional) Path of the Custom CA certificate file 
-  portal_url: https://portal.byoc.quix.ai/ #Use the proper domain
-  api_url: "https://portal-api.byoc.quix.ai/swagger/index.html" #Use the proper domain
+  portal_url: https://portal.custname.quix.io/ #Use the proper domain
+  api_url: "https://portal-api.custname.quix.io/swagger/index.html" #Use the proper domain
   quix: # You need to have a running workspace and a topic created. Also you need a token from the platform
     workspace_id: "local-test-testing"
     topic: "test-suite"
     sdk_token: "sdk-----"
 
 kafka:
-  bootstrap_servers: "kafka.byoc.quix.ai:30095,kafka.byoc.quix.ai:30096,kafka.byoc.quix.ai:30097"  # Assuming 9093 is the SSL-enabled port
+  bootstrap_servers: "kafka.custname.quix.io:30095,kafka.custname.quix.io:30096,kafka.custname.quix.io:30097"
   recheable: true #This means wherever you are executing this suite, kafka needs to be recheable
 

@@ -4,6 +4,7 @@ CONTAINER_NAME=test-suite-container
 DOCKER_FILE=Dockerfile
 CONFIG_FILE=config.yaml
 CA_FILE=ca.pem
+PLATFORM ?= linux/amd64,linux/arm64
 # Build the Docker image
 build:
 	@echo "Building Docker image..."
@@ -25,9 +26,11 @@ else
 		$(IMAGE_NAME)
 endif
 #Publish to the public registry
+
 publish:
 	@echo "Publishing container to ..."
-	docker push $(IMAGE_NAME)
+	docker buildx build --platform $(PLATFORM) --push  -f $(DOCKER_FILE) -t $(IMAGE_NAME) .
+
 
 # Clean up Docker images and containers
 clean:

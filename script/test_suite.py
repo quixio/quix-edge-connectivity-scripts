@@ -136,7 +136,7 @@ def main():
         check_site_certificate_and_connectivity(
             platform_config['api_url'], ca_cert_path=customca_cert_path)
 
-    if config['kafka']['recheable']:
+    if config['kafka']['reachable']:
         kafka_bootstrap_servers = config['kafka']['bootstrap_servers']
         for server in kafka_bootstrap_servers.split(","):
             check_kafka_connectivity(server)

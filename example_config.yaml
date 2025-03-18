@@ -9,5 +9,5 @@ platform:
 
 kafka:
   bootstrap_servers: "kafka.custname.quix.io:30095,kafka.custname.quix.io:30096,kafka.custname.quix.io:30097"
-  recheable: true #This means wherever you are executing this suite, kafka needs to be recheable
+  reachable: true #This means wherever you are executing this suite, kafka needs to be recheable
 
